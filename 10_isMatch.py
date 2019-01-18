@@ -1,10 +1,12 @@
 class Solution:
     def isMatch(self, s, p):
         """
+
         :type s: str
         :type p: str
         :rtype: bool
         """
+        # not fixed todo
         if '*' not in p and '.' not  in p and s != p:
             return False
         ls = len(s)
