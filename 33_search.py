@@ -25,7 +25,7 @@ class Solution(object):
         l = 0
         r = len(nums)-1
         while l <= r:
-            i = int((l + r) / 2)
+            i = l + (r-l)//2
             if nums[i] == target:
                 return i
             if nums[i] > target:
