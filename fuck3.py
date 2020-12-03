@@ -27,7 +27,7 @@ def fuckyou(str, K):
         for j in a:
             r += chr((j+97))
         i += 3
-    return r
+    return r.upper()
 if __name__ == '__main__':
     K = np.array(
         [(1, 11, 12),
@@ -41,3 +41,7 @@ if __name__ == '__main__':
          (10, 13, 4),
          (17, 24, 1)]
     )))
+
+    print(fuckyou('breathtaking', np.array([(3,  21,  20),
+                                           (4,  15,  23),
+                                           (6, 14,  5)])))
