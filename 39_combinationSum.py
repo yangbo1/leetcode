@@ -26,12 +26,21 @@
 # ]
 class Solution(object):
     def combinationSum(self, candidates, target):
-        num = {}
-        def fuck(N, rr):
-            if N<target:
-                for i in range(N):
-                    
+        res = []
+        path = []
+        def back(sum, index):
+            if sum > target:
+                return
+            if sum == target:
+                res.append(path[:])
+                return
+            for i in range(index, len(candidates)):
+                sum += candidates[i]
+                path.append(candidates[i])
+                back(sum, i)
+                path.pop()
+                sum -= candidates[i]
+        back(0, 0)
+        return res
 
-        fuck(candidates, target, [])
-        return r
 print(Solution().combinationSum([2,3,5], 8))
